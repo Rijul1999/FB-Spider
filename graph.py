@@ -6,13 +6,13 @@ import webbrowser
 graph= GraphAPI('YOUR_ACCESS_TOKEN')
 
 print("Please enter the page-name:" )
-PageName=raw_input()
+PageName=input()
 
 search_res=graph.get('search?q='+PageName+'&type=page&limit=5')
 
 for index,item in enumerate(search_res['data']):
     #The 'data' key of 'search_res' dictionary is a list of dictionaries of 5 pages
-    print index+1,item['name']
+    print (index+1,item['name'])
     
 pno=int(raw_input("Please enter the page no. : "))
 pid=search_res['data'][pno-1]['id']        

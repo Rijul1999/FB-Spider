@@ -14,7 +14,7 @@ for index,item in enumerate(search_res['data']):
     #The 'data' key of 'search_res' dictionary is a list of dictionaries of 5 pages
     print (index+1,item['name'])
     
-pno=int(raw_input("Please enter the page no. : "))
+pno=int(input("Please enter the page no. : "))
 pid=search_res['data'][pno-1]['id']        
       
 variable = graph.get(pid+'/posts?fields=comments.limit(5),link,full_picture,message&limit=5')
